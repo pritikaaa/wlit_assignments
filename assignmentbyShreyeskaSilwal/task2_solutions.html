@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Styler</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9f9;
+            padding: 40px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 14px;
+            width: 250px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 15px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        #output {
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+     <h2>Customize your text</h2>
+
+    <form id="styleForm">
+        <label>
+            Text Color:
+            <input type="text" id="textColor" placeholder="e.g., red or #ff0000">
+        </label>
+
+        <label>
+            Background Color:
+            <input type="text" id="bgColor" placeholder="e.g., black or #ffffff">
+        </label>
+
+        <label>
+            Text Content:
+            <input type="text" id="textContent" placeholder="e.g., Hello, World!">
+        </label>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        document.getElementById("styleForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const textColor = document.getElementById("textColor").value;
+            const bgColor = document.getElementById("bgColor").value;
+            const content = document.getElementById("textContent").value;
+
+            const outputDiv = document.getElementById("output");
+            outputDiv.textContent = content;
+            outputDiv.style.color = textColor;
+            outputDiv.style.backgroundColor = bgColor;
+        });
+    </script>
+</body>
+</html>
